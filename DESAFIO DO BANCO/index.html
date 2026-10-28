@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6b21ad">
+    <meta name="description" content="NuPobre: o banco mais rico em criatividade e mais humilde no saldo. Projeto educativo feito com HTML, CSS e JavaScript.">
+    <title>NuPobre — A conta que combina com o seu saldo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="ambient ambient-top" aria-hidden="true"></div>
+    <div class="ambient ambient-bottom" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="brand" href="#inicio" aria-label="NuPobre — início">
+                <span class="brand-symbol" aria-hidden="true">np<span>.</span></span>
+                <span class="brand-name">Nu<span>Pobre</span></span>
+            </a>
+            <div class="header-right">
+                <span class="project-badge"><span class="badge-dot" aria-hidden="true"></span> Banco 100% fictício</span>
+                <span class="avatar" aria-hidden="true">$</span>
+            </div>
+        </div>
+    </header>
+
+    <main id="inicio" class="container">
+        <section class="intro" aria-labelledby="intro-titulo">
+            <div class="intro-copy">
+                <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> O banco dos quase milionários</p>
+                <h1 id="intro-titulo">Seu saldo pode ser pequeno.<br><span>Seu banco, não.</span></h1>
+                <p class="intro-description">Bem-vindo ao <strong>NuPobre.</strong></p>
+                <div class="intro-tags" aria-label="Características do projeto">
+                    <span>✦ Zero burocracia</span>
+                    <span>✦ Mil de saldo inicial</span>
+                    <span>✦ Sonhar é grátis</span>
+                </div>
+            </div>
+            <div class="hero-decoration" aria-hidden="true">
+                <div class="decor-ring ring-one"></div>
+                <div class="decor-ring ring-two"></div>
+                <div class="floating-sticker"><span>R$</span><strong>0</strong><small>taxa de ostentação</small></div>
+                <span class="decor-spark spark-one">✳</span>
+                <span class="decor-spark spark-two">✦</span>
+            </div>
+        </section>
+
+        <section class="saldo-card" aria-labelledby="saldo-titulo">
+            <div class="saldo-top">
+                <div class="saldo-label-group">
+                    <span class="saldo-icon" aria-hidden="true">◈</span>
+                    <div>
+                        <p class="kicker">SUA CONTA NUPOBRE</p>
+                        <h2 id="saldo-titulo">Saldo disponível</h2>
+                    </div>
+                </div>
+                <span class="saldo-chip">CONTA DIGITAL</span>
+            </div>
+            <div class="saldo-body">
+                <strong id="saldo-atual" aria-live="polite">R$ 1.000,00</strong>
+                <p>Olha só! Por enquanto você tá no lucro.</p>
+            </div>
+            <div class="saldo-bottom">
+                <span class="saldo-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                <span>O importante é ter saúde. E um pouco de saldo.</span>
+            </div>
+            <div class="card-shine" aria-hidden="true"></div>
+        </section>
+
+        <div class="content-grid">
+            <section class="panel operations-panel" aria-labelledby="operacoes-titulo">
+                <div class="panel-heading">
+                    <span class="section-icon icon-operation" aria-hidden="true">↗</span>
+                    <div>
+                        <p class="panel-kicker">É HORA DE MOVIMENTAR</p>
+                        <h2 id="operacoes-titulo">Operações bancárias</h2>
+                    </div>
+                </div>
+                <p class="panel-description">Faça sua mágica financeira. Aqui o saldo muda com um clique.</p>
+
+                <div class="form-group">
+                    <label for="operacao">O que vamos fazer hoje?</label>
+                    <div class="select-wrapper">
+                        <select id="operacao" name="operacao">
+                            <option value="saldo">Consultar saldo</option>
+                            <option value="depositar">Depositar dinheiro</option>
+                            <option value="sacar">Sacar dinheiro</option>
+                            <option value="extrato">Ver meu extrato</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="valor">Valor da operação (R$)</label>
+                    <div class="input-wrapper">
+                        <span class="input-prefix" aria-hidden="true">R$</span>
+                        <input id="valor" name="valor" type="number" inputmode="numeric" min="1" step="1" placeholder="Ex.: 533" disabled>
+                    </div>
+                    <small class="help-text">Para depósito ou saque, informe um valor inteiro.</small>
+                </div>
+
+                <button id="executar" class="execute-button" type="button">
+                    <span>Executar operação</span>
+                    <span class="button-arrow" aria-hidden="true">→</span>
+                </button>
+                <p class="form-footnote">Seguro: Me passa sua senha pra eu ver um negócio.</p>
+            </section>
+
+            <section class="panel result-panel" aria-labelledby="resultado-titulo">
+                <div class="panel-heading">
+                    <span class="section-icon icon-receipt" aria-hidden="true">≡</span>
+                    <div>
+                        <p class="panel-kicker">SEU COMPROVANTE</p>
+                        <h2 id="resultado-titulo">Resultado da operação</h2>
+                    </div>
+                </div>
+                <div class="receipt" role="region" aria-label="Comprovante da operação">
+                    <div class="receipt-header">
+                        <span class="receipt-brand">NP<span>.</span></span>
+                        <span class="receipt-status"><i aria-hidden="true"></i> Pronto pra usar</span>
+                    </div>
+                    <pre id="resultado" aria-live="polite">Escolha uma operação e clique no botão para começar.</pre>
+                    <div class="receipt-footer">
+                        <span>NuPobre • Seu sonho, nosso código.</span>
+                        <span aria-hidden="true">✳ ✳ ✳</span>
+                    </div>
+                </div>
+                <div class="tip">
+                    <span aria-hidden="true">💡</span>
+                    <p><strong>Dica de milionário:</strong> consultar o saldo não faz ele aumentar. Já tentamos.</p>
+                </div>
+            </section>
+        </div>
+
+        <aside class="bottom-banner" aria-label="Mensagem divertida">
+            <span class="banner-symbol" aria-hidden="true">✳</span>
+            <p><strong>NuPobre Rewards</strong> <span>— acumule experiência em JavaScript, porque pontos no cartão não temos.</span></p>
+            <span class="banner-arrow" aria-hidden="true">↗</span>
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <span><strong>NuPobre.</strong> O futuro financeiro é uma variável.</span>
+            <span>Paródia educacional • Não é um banco real</span>
+        </div>
+    </footer>
+</body>
+</html>
